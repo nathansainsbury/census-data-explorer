@@ -75,6 +75,7 @@ Where the `codelist_def` table describes the `topics`, the `codes` table describ
 SELECT ID, MNU FROM codelist_def WHERE MNU = 'COB';
 ```
 Which returns the follow table.
+
 |ID|MNU|
 |-|-|
 |12|COB|
@@ -85,6 +86,7 @@ SELECT CLID, ID, DESCRP FROM codes WHERE CLID = 12;
 ```
 
 Which returns the follow table with 352 rows.
+
 |CLID|ID|DESCRP|
 |-|-|-|
 |12|246|Total: Country of birth|
@@ -94,6 +96,7 @@ Which returns the follow table with 352 rows.
 |12|250|Northern Ireland|
 |...|...|...|
 |12|4428|Antarctica, Oceania and Other|
+
 ### **cube_description**
 
 ## Column Definitions
