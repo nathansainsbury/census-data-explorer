@@ -83,6 +83,7 @@ Using `codelist_def.ID` we can search the `codes` table where `codelist_def.ID =
 ```sql
 SELECT CLID, ID, DESCRP FROM codes WHERE CLID = 12;
 ```
+
 Which returns the follow table with 352 rows.
 |CLID|ID|DESCRP|
 |-|-|-|
