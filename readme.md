@@ -7,9 +7,7 @@ At Jisc we have created a guest account for user's to access the data free of ch
 
 ```yaml
 host: unknowhost.com:3306
-
 user: guest
-
 password: password
 ```
 
@@ -69,8 +67,32 @@ Which will return the following table.
 |12|Country of birth|COB|Country of birth is the country in which a person was born. This topic records whether the person was born in or if they were not born in a country. For the full country of birth classification in England and Wales, please see the National Statistics Country Classification.|
 |33|Qualification, highest level of|HIQUAL|The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent. There were 12 response options (plus "no qualifications") covering professional and vocational qualifications, and a range of academic qualifications These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated). No Qualifications: No academic or professional qualifications.Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills. Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma Apprenticeship. Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma. Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy). Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).|
 |68|Unit|UNIT|The unit is for a particular count (e.g. people or households)|
-### **codes**
 
+So when we find `CLS = "AGE,COB,HIQUAL,UNIT"` in the `codelist_combos` table we know that the `topic` combination is `Age`, `Country of birth`, `Qualification highest level of` and `Unit`. This implies that the data related to this `CLS` will likely be in relation to a breakdown of qualifications with relation to the age and country of birth of people (`UNIT`).
+### **codes**
+Where the `codelist_def` table describes the `topics`, the `codes` table describes the `filters`. If we have `MNU = "COB"`, we can perform the following query to get the `ID` of the `topic`:
+```sql
+SELECT ID, MNU FROM codelist_def WHERE MNU = 'COB';
+```
+Which returns the follow table.
+|ID|MNU|
+|-|-|
+|12|COB|
+
+Using `codelist_def.ID` we can search the `codes` table where `codelist_def.ID = codes.CLID`. To find a list of filters for this filter, we perform the following query:
+```sql
+SELECT CLID, ID, DESCRP FROM codes WHERE CLID = 12;
+```
+Which returns the follow table with 352 rows.
+|CLID|ID|DESCRP|
+|-|-|-|
+|12|246|Total: Country of birth|
+|12|247|Europe|
+|12|248|United Kingdom|
+|12|249|England|
+|12|250|Northern Ireland|
+|...|...|...|
+|12|4428|Antarctica, Oceania and Other|
 ### **cube_description**
 
 ## Column Definitions
