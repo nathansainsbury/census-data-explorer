@@ -19,6 +19,12 @@ We provide a JavaScript and Python SDK. They can be found here:
 - [Census Data JavaScript SDK](http://google.com)
 - [Census Data Python SDK](http://google.com)
 
+## APIs
+
+We provide a REST API as well as a GraphQL API, documentation for these can be found here:
+- [Census Data REST API](http://google.com)
+- [Census Data GraphQL API](http://google.com)
+
 ## Understanding the Tables
 The following section will describe the main meta data tables.
 
