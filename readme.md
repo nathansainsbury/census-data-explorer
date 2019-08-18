@@ -2,6 +2,10 @@
 
 The Census Data Helper provides a chatbot, as well as a written guide on how to access and make sense of the Census Data. This guide will also help you learn some basic SQL too.
 
+The database and data have been forked from the [UK Data Service](https://www.ukdataservice.ac.uk/) Infuse2011 table.
+
+If you have any questions feel free contact me via twitter [@mountaincows](https://twitter.com/mountaincows).
+
 ## Connecting to the Database
 
 At Jisc we have created a guest account for user's to access the data free of charge. Guest's will only be able to perform `SELECT` queries. We currently have the data stored in a `MySQL` database with the following credentials:

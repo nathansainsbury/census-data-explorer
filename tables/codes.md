@@ -1,8 +1,11 @@
 # tables/codes
+
 Where the `codelist_def` table describes the `topics`, the `codes` table describes the `filters`. If we have `MNU = "COB"`, we can perform the following query to get the `ID` of the `topic`:
+
 ```sql
 SELECT ID, MNU FROM codelist_def WHERE MNU = 'COB';
 ```
+
 Which returns the follow table.
 
 |ID|MNU|
@@ -26,7 +29,7 @@ Which returns the following table with 352 rows.
 |...|...|...|
 |12|4428|Antarctica, Oceania and Other|
 
-You can also search the database if with relation to the IDs/[CODES](columns/codes.md) that are fonud in the [codelist_cube_description](tables/codelist_cube_description) table. This can be done via the following query:
+You can also search the database if with relation to the IDs/[CODES](../columns/codes.md) that are fonud in the [codelist_cube_description](codelist_cube_description.md) table. This can be done via the following query:
 
 ```sql
 SELECT CLID, ID, DESCRP FROM codes WHERE ID IN (45, 256, 1006, 1962);
