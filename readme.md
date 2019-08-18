@@ -3,6 +3,7 @@
 The Census Data Helper provides a chatbot, as well as a written guide on how to access and make sense of the Census Data. This guide will also help you learn some basic SQL too.
 
 ## Connecting to the Database
+
 At Jisc we have created a guest account for user's to access the data free of charge. Guest's will only be able to perform `SELECT` queries. We currently have the data stored in a `MySQL` database with the following credentials:
 
 ```yaml
@@ -30,18 +31,18 @@ We provide a JavaScript and Python SDK. They can be found here:
 ## APIs
 
 We provide a REST API as well as a GraphQL API, documentation for these can be found here:
+
 - [Census Data REST API](http://google.com)
 - [Census Data GraphQL API](http://google.com)
 
 ## Understanding the Tables
 The following section will describe the main meta data tables.
 
-- [codelist_combos](tables/codelist_combos.md) (complete)
+- [codelist_combos](tables/codelist_combos.md)
 - [codelist_cube_description](tables/codelist_cube_description.md)
-- [codelist_def](tables/codelist_def.md) (complete)
-- [codes](tables/codes.md) (complete)
+- [codelist_def](tables/codelist_def.md)
+- [codes](tables/codes.md)
 - [cube_description](tables/cube_description.md)
-
 
 ## Column Definitions
 
