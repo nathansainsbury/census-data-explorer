@@ -36,8 +36,8 @@ We provide a JavaScript and Python SDK. They can be found here:
 
 We provide a REST API as well as a GraphQL API, documentation for these can be found here:
 
-- [Census Data REST API](http://google.com)
-- [Census Data GraphQL API](http://google.com)
+- [Census Data REST API](https://github.com/nathansainsbury/census-data-explorer-rest-api)
+- [Census Data GraphQL API](https://github.com/nathansainsbury/census-data-explorer-graphql-api)
 
 ## Understanding the Tables
 The following section will describe the main meta data tables.
