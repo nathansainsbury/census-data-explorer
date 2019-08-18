@@ -58,3 +58,12 @@ In this section you will find information regarding individual column `defintion
 - [EXTENTS_DETAILS](columns/extents_details.md)
 - [UNITS](columns/units.md)
 - [DKAN_TITLE](columns/dkan_title.md)
+
+## Example Questions
+
+Going through the tables and column definitions individually can be a bit daunting and abstract. It's often easier to learn these things by going through a few examples. Let's start with a few simple ones:
+
+- [How many people are in full-time employment in Wales?](examples/example_1.md)
+- [How many Sikh's are working in England and Wales (combined)?](examples/example_2.md)
+
+Hopefully after doing the examples above you should have good understanding of how to interact with the 2011 Census Data. If you're still struggling, that's fine, these things can often take a while to get to grips with. Feel free to ask the [Census Data Helper]() any questions you have or alternatively drop me a message on twitter [@mountaincows](https://twitter.com/mountaincows).
