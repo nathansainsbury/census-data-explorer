@@ -11,8 +11,8 @@ If you have any questions feel free contact me via twitter [@mountaincows](https
 At Jisc we have created a guest account for user's to access the data free of charge. Guest's will only be able to perform `SELECT` queries. We currently have the data stored in a `MySQL` database with the following credentials:
 
 ```yaml
-host: unknowhost.com:3306
-user: guest
+host: localhost:3306
+user: root
 password: password
 ```
 
@@ -40,6 +40,7 @@ We provide a REST API as well as a GraphQL API, documentation for these can be f
 - [Census Data GraphQL API](https://github.com/nathansainsbury/census-data-explorer-graphql-api)
 
 ## Understanding the Tables
+
 The following section will describe the main meta data tables.
 
 - [codelist_combos](tables/codelist_combos.md)
@@ -48,16 +49,14 @@ The following section will describe the main meta data tables.
 - [codes](tables/codes.md)
 - [cube_description](tables/cube_description.md)
 
-## Column Definitions
+## Field Definitions
 
-In this section you will find information regarding individual column `defintions/fieilds`.
+In this section you will find information regarding individual `fields`.
 
-- [CB_ID](columns/cb_id.md)
-- [CLS](columns/cls.md) (complete)
-- [GL_EXTENTS](columns/gl_extents.md)
-- [EXTENTS_DETAILS](columns/extents_details.md)
-- [UNITS](columns/units.md)
-- [DKAN_TITLE](columns/dkan_title.md)
+- [CLS](fields/cls.md)
+- [GL_EXTENTS](fields/gl_extents.md)
+- [UNITS](fields/units.md)
+- [DKAN_TITLE](fields/dkan_title.md)
 
 ## Example Questions
 
