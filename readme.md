@@ -57,6 +57,13 @@ In this section you will find information regarding individual `fields`.
 - [GL_EXTENTS](fields/gl_extents.md)
 - [UNITS](fields/units.md)
 - [DKAN_TITLE](fields/dkan_title.md)
+- [CL_CODE](fields/cl_code.md)
+- [CODES](fields/codes.md)
+- [INFUSE_TABLE_NAME](fields/infuse_table_name.md)
+
+To do:
+
+- [CELLNAME](fields/cellname.md)
 
 ## Example Questions
 
