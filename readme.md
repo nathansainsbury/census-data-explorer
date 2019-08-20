@@ -1,4 +1,4 @@
-# Census Data Helper
+# Census Data Explorer
 
 The Census Data Helper provides a chatbot, as well as a written guide on how to access and make sense of the Census Data. This guide will also help you learn some basic SQL too.
 
@@ -60,10 +60,10 @@ In this section you will find information regarding individual `fields`.
 - [CL_CODE](fields/cl_code.md)
 - [CODES](fields/codes.md)
 - [INFUSE_TABLE_NAME](fields/infuse_table_name.md)
+- [CELLNAME](fields/cellname.md)
 
 To do:
-
-- [CELLNAME](fields/cellname.md)
+- [IS_ID](fields/is_id.md)
 
 ## Example Questions
 
