@@ -45,7 +45,6 @@ In this section you will find information regarding the following:
 
 - [topics](topics.md)
 - [filters](filters.md)
-- [geolocation](geolocation.md)
 
 It is good to know what these actually are before querying the data.
 
