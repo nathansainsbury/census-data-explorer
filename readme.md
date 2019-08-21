@@ -72,8 +72,6 @@ In this section you will find information regarding individual `fields`.
 - [CODES](fields/codes.md)
 - [INFUSE_TABLE_NAME](fields/infuse_table_name.md)
 - [CELLNAME](fields/cellname.md)
-
-To do:
 - [IS_ID](fields/is_id.md)
 
 ## Example Questions
