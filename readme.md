@@ -39,6 +39,16 @@ We provide a REST API as well as a GraphQL API, documentation for these can be f
 - [Census Data REST API](https://github.com/nathansainsbury/census-data-explorer-api)
 - [Census Data GraphQL API](https://github.com/nathansainsbury/census-data-explorer-graphql)
 
+## Extra Information
+
+In this section you will find information regarding the following:
+
+- [topics](topics.md)
+- [filters](filters.md)
+- [geolocation](geolocation.md)
+
+It is good to know what these actually are before querying the data.
+
 ## Understanding the Tables
 
 The following section will describe the main meta data tables.
@@ -48,6 +58,7 @@ The following section will describe the main meta data tables.
 - [codelist_def](tables/codelist_def.md)
 - [codes](tables/codes.md)
 - [cube_description](tables/cube_description.md)
+- [cellmaps](tables/cellmaps.md)
 
 ## Field Definitions
 
