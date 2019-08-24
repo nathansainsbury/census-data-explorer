@@ -48,6 +48,25 @@ In this section you will find information regarding the following:
 
 It is good to know what these actually are before querying the data.
 
+## Locations
+
+Every piece of census data you will find has some location/location type attached to it, these different types can be found in the [GL_EXTENTS](fields/gl_extents.md) field. If you want to learn more about each field, check out the links below.
+
+- [2000 - **United Kingdom**](locations/2000.md)
+- [2001 - **Great Britain**](locations/2001.md)
+- [2002 - **England and Wales as a single entity**](locations/2002.md)
+- [2003 - **Countries**](locations/2003.md)
+- [2004 - **Regions**](locations/2004.md)
+- [2005 - **Counties**](locations/2005.md)
+- [2006 - **Local Authorities**](locations/2006.md)
+- [2007 - **Wards and Electoral Divisions**](locations/2007.md)
+- [2008 - **Middle Super Output Areas & Intermediate Zones**](locations/2008.md)
+- [2009 - **Lower Super Output Areas & Data Zones**](locations/2009.md)
+- [2010 - **Output Areas and Small Areas**](locations/2010.md)
+- [2011 - **Merging Local Authorities**](locations/2011.md)
+- [2012 - **Merging Wards & Electoral Division**](locations/2012.md)
+- [2013 - **Workplace Zone Layer**](locations/2013.md)
+
 ## Understanding the Tables
 
 The following section will describe the main meta data tables.

@@ -9,7 +9,8 @@ The [GL_EXTENTS](gl_extents.md) field looks something like this:
 
 The [GL_EXTENTS](gl_extents.md) field is made up of a `GEOLOCATION` part and an `EXTENTS` part. In the case where `GL_EXTENTS = 2002:3`, `2002` and `3` would be the `GEOLOCATION` and `EXTENTS` respectively. This means that the data is available on the `Country` level (`2002`) and for `England and Wales as a single entity` (`3`).
 
-## GEOLOCATIONS:
+## GEOLOCATIONS
+
 - 2000 - **United Kingdom**
 - 2001 - **Great Britain**
 - 2002 - **England and Wales as a single entity**
@@ -25,7 +26,8 @@ The [GL_EXTENTS](gl_extents.md) field is made up of a `GEOLOCATION` part and an 
 - 2012 - **Merging Wards & Electoral Division**
 - 2013 - **Workplace Zone Layer**
 
-## EXTENTS:
+## EXTENTS
+
 - 1 - **United Kingdom**
 - 2 - **Great Britain**
 - 3 - **England and Wales as a single entity**
