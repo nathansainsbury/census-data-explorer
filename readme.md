@@ -52,20 +52,20 @@ It is good to know what these actually are before querying the data.
 
 Every piece of census data you will find has some location/location type attached to it, these different types can be found in the [GL_EXTENTS](fields/gl_extents.md) field. If you want to learn more about each field, check out the links below.
 
-- [2000 - **United Kingdom**](locations/2000.md)
-- [2001 - **Great Britain**](locations/2001.md)
-- [2002 - **England and Wales as a single entity**](locations/2002.md)
-- [2003 - **Countries**](locations/2003.md)
-- [2004 - **Regions**](locations/2004.md)
-- [2005 - **Counties**](locations/2005.md)
-- [2006 - **Local Authorities**](locations/2006.md)
+- [2000 - **United Kingdom**](locations/2000.md) (todo)
+- [2001 - **Great Britain**](locations/2001.md) (todo)
+- [2002 - **England and Wales as a single entity**](locations/2002.md) (todo)
+- [2003 - **Countries**](locations/2003.md) (todo)
+- [2004 - **Regions**](locations/2004.md) (todo)
+- [2005 - **Counties**](locations/2005.md) (todo)
+- [2006 - **Local Authorities**](locations/2006.md) (todo)
 - [2007 - **Wards and Electoral Divisions**](locations/2007.md)
 - [2008 - **Middle Super Output Areas & Intermediate Zones**](locations/2008.md)
 - [2009 - **Lower Super Output Areas & Data Zones**](locations/2009.md)
 - [2010 - **Output Areas and Small Areas**](locations/2010.md)
 - [2011 - **Merging Local Authorities**](locations/2011.md)
 - [2012 - **Merging Wards & Electoral Division**](locations/2012.md)
-- [2013 - **Workplace Zone Layer**](locations/2013.md)
+- [2013 - **Workplace Zone Layer**](locations/2013.md) (todo)
 
 ## Understanding the Tables
 
@@ -96,7 +96,7 @@ In this section you will find information regarding individual `fields`.
 
 Going through the tables and column definitions individually can be a bit daunting and abstract. It's often easier to learn these things by going through a few examples. Let's start with a few simple ones:
 
-- [How many people are in full-time employment in Wales?](examples/example_1.md)
-- [How many Sikh's are working in England and Wales (combined)?](examples/example_2.md)
+- [How many people are in full-time employment in Wales?](examples/example_1.md) (todo)
+- [How many Sikh's are working in England and Wales (combined)?](examples/example_2.md) (todo)
 
-Hopefully after doing the examples above you should have good understanding of how to interact with the 2011 Census Data. If you're still struggling, that's fine, these things can often take a while to get to grips with. Feel free to ask the [Census Data Helper]() any questions you have or alternatively drop me a message on twitter [@mountaincows](https://twitter.com/mountaincows).
+Hopefully after doing the examples above you should have good understanding of how to interact with the 2011 Census Data. If you're still struggling, that's fine, these things can often take a while to get to grips with. Feel free to ask the [Census Data Helper](http://google.com) any questions you have or alternatively drop me a message on twitter [@mountaincows](https://twitter.com/mountaincows).
