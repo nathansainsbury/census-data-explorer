@@ -10,7 +10,9 @@ If you have any questions feel free contact me via twitter [@mountaincows](https
 
 I have provided a SQL dump of the simplified table which can be downloaded. I would recommend reading the documentation to fully understand what is going on. If you find something on the database that isn't documented, please get in touch.
 
-[Download the SQL Dump](download)
+Due to the size of the SQL Table, we have also released a minifed version of the table. This table **only** includes metadata, meaning you can play around with the different tables and learn how to get the data. Once you're comfortable with this, I'd recommend proceeding to the larger download
+
+Download the minified SQL Dump, [census-data-explorer-simplified.sql.zip](https://mega.nz/#!nTQAxQ6Z!DzPX2lgGlAp3s2v2RQPAcWlo5IVEkmsyMrTzEfTQxBk)
 
 ## Connecting to the Database
 
