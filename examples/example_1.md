@@ -189,3 +189,5 @@ You'll notice that we get 3 rows. This makes sense as there are 3 filters. If yo
 |260|QS601EW0004|QS601_0_EW_MRG_RCD_AGG|
 |260|QS601EW0004|QS601_0_EW_MRG_RCD_AGG|
 |260|QS601EW0004|QS601_0_EW_MRG_RCD_AGG|
+
+Now that we know 

@@ -6,6 +6,12 @@ The database and data have been forked from the [UK Data Service](https://www.uk
 
 If you have any questions feel free contact me via twitter [@mountaincows](https://twitter.com/mountaincows).
 
+## Downloading the data
+
+I have provided a SQL dump of the simplified table which can be downloaded. I would recommend reading the documentation to fully understand what is going on. If you find something on the database that isn't documented, please get in touch.
+
+[Download the SQL Dump](download)
+
 ## Connecting to the Database
 
 At Jisc we have created a guest account for user's to access the data free of charge. Guest's will only be able to perform `SELECT` queries. We currently have the data stored in a `MySQL` database with the following credentials:
@@ -29,15 +35,15 @@ If you just want a quick overview, you can view our [Understaind SQL Page](under
 
 We provide a JavaScript and Python SDK. They can be found here:
 
-- [Census Data JavaScript SDK](http://google.com)
-- [Census Data Python SDK](http://google.com)
+- [Census Data JavaScript SDK](http://google.com) (todo)
+- [Census Data Python SDK](http://google.com) (todo)
 
 ## APIs
 
 We provide a REST API as well as a GraphQL API, documentation for these can be found here:
 
-- [Census Data REST API](https://github.com/nathansainsbury/census-data-explorer-api)
-- [Census Data GraphQL API](https://github.com/nathansainsbury/census-data-explorer-graphql)
+- [Census Data REST API](https://github.com/nathansainsbury/census-data-explorer-api) (todo)
+- [Census Data GraphQL API](https://github.com/nathansainsbury/census-data-explorer-graphql) (todo)
 
 ## Extra Information
 
@@ -77,6 +83,10 @@ The following section will describe the main meta data tables.
 - [codes](tables/codes.md)
 - [cube_description](tables/cube_description.md)
 - [cellmaps](tables/cellmaps.md)
+- [geocodes_def](tables/geocodes_def.md) (todo)
+- [geocodes_relation](tables/geocodes_relation) (todo)
+- [geolevels_def](tables/geolevels_def.md) (todo)
+- [geolevels_relation](tables/geolevels_relation.md) (todo)
 
 ## Field Definitions
 
@@ -91,12 +101,13 @@ In this section you will find information regarding individual `fields`.
 - [INFUSE_TABLE_NAME](fields/infuse_table_name.md)
 - [CELLNAME](fields/cellname.md)
 - [IS_ID](fields/is_id.md)
+- [NESTED_DESCRP](fields/nested_descrp.md) (todo)
 
 ## Example Questions
 
 Going through the tables and column definitions individually can be a bit daunting and abstract. It's often easier to learn these things by going through a few examples. Let's start with a few simple ones:
 
-- [How many people are in full-time employment in Wales?](examples/example_1.md) (todo)
-- [How many Sikh's are working in England and Wales (combined)?](examples/example_2.md) (todo)
+- [How many people are in full-time employment in Wales?](examples/example_1.md) (finish off)
+- more to come...
 
 Hopefully after doing the examples above you should have good understanding of how to interact with the 2011 Census Data. If you're still struggling, that's fine, these things can often take a while to get to grips with. Feel free to ask the [Census Data Helper](http://google.com) any questions you have or alternatively drop me a message on twitter [@mountaincows](https://twitter.com/mountaincows).
