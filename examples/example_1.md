@@ -17,6 +17,7 @@ We know that `people` is the UNIT, so we can find out what the first filter will
 ```sql
 SELECT ID, NAME, MNU FROM codelist_def WHERE MNU = 'UNIT';
 ```
+
 |ID|NANE|MNU|
 |-|-|-|
 |68|Unit|UNIT|
@@ -24,29 +25,29 @@ SELECT ID, NAME, MNU FROM codelist_def WHERE MNU = 'UNIT';
 Given that we know the `ID = 68`, we can now perform the next query which will show us a list of `filters` for this topic.
 
 ```sql
-SELECT CLID, ID, DESCRP FROM codes WHERE CLID = 68;
+SELECT CL_ID, ID, DESCRP, NESTED_DESCRP FROM codes WHERE CL_ID = 68;
 ```
 
-|CLID|ID|DESCRP|
-|-|-|-|
-|68|1962|Persons|
-|68|1963|Hectares|
-|68|1964|Households|
-|68|1965|Dwellings|
-|68|1966|Rooms|
-|68|1967|Bedrooms|
-|68|1968|Cars or vans|
-|68|1969|Communal establishments|
-|68|1970|Families|
-|68|1971|Household spaces|
-|68|4232|Kilometres|
-|68|4235|Years|
+|CL_ID|ID|DESCRP|NESTED_DESCRP|
+|-|-|-|-|
+|68|1962|Persons|Persons|
+|68|1963|Hectares|Hectares|
+|68|1964|Households|Households|
+|68|1965|Dwellings|Dwellings|
+|68|1966|Rooms|Rooms|
+|68|1967|Bedrooms|Bedrooms|
+|68|1968|Cars or vans|Cars or vans|
+|68|1969|Communal establishments|Communal establishments|
+|68|1970|Families|Families|
+|68|1971|Household spaces|Household spaces|
+|68|4232|Kilometres|Kilometres|
+|68|4235|Years|Years|
 
 Given that we know we're looking for something like `people`, we can now use the following row.
 
-|CLID|ID|DESCRP|
+|CL_ID|ID|DESCRP|
 |-|-|-|
-|68|1962|Persons| 
+|68|1962|Persons|
 
 We know now we have a [CLS](../fields/cls.md) field of `UNIT:1962`.
 
@@ -72,128 +73,55 @@ Now we need to find with `filter` we need. We can do this by performing the same
 SELECT CLID, ID, DESCRP, NESTED_DESCRP FROM codes WHERE CLID = 18;
 ```
 
-You'll notice that if you've run this query yourself, there are 155 rows returned, and we're looking for something like `full-time employment`. However, this is very ambigious. Here's some of examples of `filters` that may appear to mean `full-time emplyoment`:
+You'll notice that if you've run this query yourself, there are 155 rows returned, and we're looking for something like `full-time employment`. If you were to soley look at the DESCRP field you would see a lot of repetition for `Full-time`. However the [NESTED_DESCRP](../fields/nested_descrp.md) field alleviates the problem of ambiguity. A lot of [filters](../filters.md) are actually children of other [filters](../filters.md).
 
-|CLID|ID|DESCRP|NEST_DESCRP|
+Even though there may be many results for `Full-time`, they are all different:
+
+```sql
+SELECT ID, CL_ID, DESCRP, NESTED_DESCRP
+FROM infuse2011.codes
+WHERE DESCRP = 'Full-time'
+AND CL_ID = 18;
+```
+
+|CL_ID|ID|DESCRP|NESTED_DESCRP|
 |-|-|-|-|
-|18|565|Economically active|...|
-|18|566|Employed|...|
-|18|568|Full-time|...|
-|18|571|In employment|...|
-|18|577|Full-time|...|
-|18|588|In employment the week before the census"|...|
-|18|591|Full-time|...|
-|18|594|Full-time|...|
-|18|2276|Full-time|...|
-|18|2277|Full-time (including full-time students)|...|
-|18|2285|Full-time|...|
-|18|2292|Full-time|...|
-|18|2293|(inclduing full-time students)|...|
-|18|3795|Full-time (excluding full-time students)|...|
-|18|3797|Full-time (excluding full-time students)|...|
-|18|3799|Full-time (excluding full-time students)|...|
-|...|...|...|...|
+568| 18| Full-time| Economically active\ Employed\ Full-time
+577| 18| Full-time| Economically active\ Employee\ Full-time
+591| 18| Full-time| Economically active\ Self-employed with employees\ Full-time
+594| 18| Full-time| Economically active\ Self-employed without employees\ Full-time
+2276| 18| Full-time| Economically active\ In employment\ Employee\ Full-time
+2285| 18| Full-time| Economically active\ In employment\ Full-time students\ Full-time
+2292| 18| Full-time| Economically active\ In employment\ Self-employed\ Full-time
+3917| 18| Full-time| Economically active\ In employment\ Self-employed with employees\ Full-time
+3924| 18| Full-time| Economically active\ In employment\ Self-employed without employees\ Full-time
+3927| 18| Full-time| Economically active\ Self-employed\ Full-time
+3950| 18| Full-time| Economically active\ In employment\ Full-time
+4007| 18| Full-time| Self-employed with employees\ Full-time
+4010| 18| Full-time| Self-employed without employees\ Full-time
+4930| 18| Full-time| Economically active (including full-time students)\ In employment\ Self-employed without employees\ Full-time
+4935| 18| Full-time| Economically active (including full-time students)\ In employment\ Self-employed with employees\ Full-time
 
-The point I'm trying to make here is that there are often (especially for `ECOACT`) many different `filters` that might make sense. The easiest way to describe why this appears to be the case is that certain [CLS](../filters/cls.md) don't go together. We'll see this shortly. 
+It is quite clear now how ambigious the DESCRP field, the [NESTED_DESCRP](../fields/nested_descrp.md) field is much more descreptive.
 
-We cannot solely rely on the DESCRP field, we also need to look at the [NESTED_DESCRP](nested_descrp.md) field. This shows us the granularity of the field and what full-time means for a given filter.
+The problem doesn't quite finish here. We know 2 things for definite:
 
-As we were saying earlier, `full-time` can mean many different thing, but if we go with:
+- UNIT: 1962
+- 2003: 7 (Wales)
 
-
-
-----
-update later
-```sql
-SELECT * FROM cellmaps WHERE UNIT = 1962 AND ECOACT = 568;
-```
-
-With these query, we get lucky, we get the following [IS_ID](../fields/id_id.md) fields returned:
-
-|IS_ID|
-|-|
-|306588|
-|306604|
-|306615|
-
-This means that there are 3 combinations of filters that include `UNIT = 1962` and `ECOACT = 568`. We can perform a query to find the [CL_CODE](../filters/cl_code.md) field from the [codelist_cube_description](../tables/codelist_cube_description.md) table:
+However not all of the rows in the table above are necessarily found in conjuction with:
 
 ```sql
-SELECT IS_ID, CELLNAME, CL_CODE, GL_EXTENTS FROM codelist_cube_description WHERE IS_ID IN (306588, 306604,306615);
+UNIT = 1962 AND GL_2003 LIKE '%7%';
 ```
 
-|IS_ID|CELLNAME|CL_CODE|GL_EXTENTES
-|-|-|-|-|
-|306588|KS601NI0003|AGE:46,ECOACT:568,UNIT:1962|2003:5,2006:5,2007:5,2009:5,2010:5|
-|306604|KS602NI0003|AGE:46,ECOACT:568,SEX:1932,UNIT:1962|2003:5,2006:5,2007:5,2009:5,2010:5|
-|306615|KS603NI0003|AGE:46,ECOACT:568,SEX:1933,UNIT:1962|2003:5,2006:5,2007:5,2009:5,2010:5|
-
-So far this looks great! But... no. This is the point where we realise why it matters which `ECOACT` we chose. If we look closely at the [GL_EXTENTS](../fields/gl_extents.md) that we have been returned, we can see they are all for Northern Ireland:
-
-- `2003:5` - Countries : Northern Ireland
-- `2006:5` - Local Authorities : NorthernIreland
-- `2007:5` - Wards and Electoral Divisions : Northern Ireland
-- `2009:5` - Lower Super Output Areas & Data Zones : Northern Ireland
-- `2010:5` - Output Areas and Small Areas : Northern Ireland
-
-What we need to do is figure out which `filter` for `ECOACT` contains information about `full-time employment` **and** is available in `Wales`. There are several ways we can do this. One way to do this includes searching the [cellmaps](../tables/cellmaps.md) table `JOINED` with the [codelist_cube_description](../tables/codelist_cube_description.md) table `ON  cellmaps.IS_ID = codelist_cube_description.IS_ID `. We can now search against the [GL_EXTENTS](../fields/gl_extents.md) field to get the following query:
+The only way to test this would be to select a few [filter](../filters.md) options for `ECOACT` and check the [cellmaps](../tables/cellmaps.md) table.
 
 ```sql
-SELECT 
-codelist_cube_description.CL_CODE,
-cellmaps.*,
-codelist_cube_description.GL_EXTENTS 
-FROM infuse2011.cellmaps
-
-JOIN infuse2011.codelist_cube_description ON cellmaps.IS_ID = codelist_cube_description.IS_ID
-
-WHERE codelist_cube_description.GL_EXTENTS LIKE '%2003:5%'
-
-AND cellmaps.UNIT = 1962
-
-AND cellmaps.ECOACT IN (577, 591, 594);
+SELECT * FROM cellmaps WHERE
+UNIT = 1962 AND
+GL_2003 LIKE '%7%' AND
+ECOACT IN (568, 577, 2276);
 ```
 
-This query looks very complicated (compared to all our others). Essentially all it's doing is combining the two tables so we can filter the results by[GL_EXTENTS](../fields/gl_extents.md).
-
-You will notice that we have done `cellmaps.ECOACT IN (577, 591, 594)`. These are 3 randomly picked `filters` from `ECOACT` that we believe to represent `full-time employment`.
-
-When we actually run this query, we get 2874 rows returned. This is way too many for any of us to go through. Keep in mind, we're wanting one row in the end. The next thing we can do is just pick the one with the smallest [CL_CODE](../fields/cl_code.md) length. For now, you can be manual about this (keeping in mind that there are multiple ways to get the right answer).
-
-For now, we've got the following [CL_CODEs](../fields/cl_code.md) and [IS_IDs](../fields/is_id.md):
-|IS_ID|CL_CODE|
-|-|-|-|
-|260|AGE:46,ECOACT:577,UNIT:1962|
-|557|AGE:46,ECOACT:591,UNIT:1962|
-|559|AGE:46,ECOACT:594,UNIT:1962|
-
-You will notice two things:
-
-- The [CL_CODEs](../fields/cl_code.md) all have an extra `field` and `topic`, `AGE:46`
-- Each has a different `ECOACT`
-
-First, let's find out what `AGE:46` means, using the following query:
-
-```sql
-SELECT CLID, ID, DESCRP FROM codes WHERE ID = 46;
-```
-
-|CLID|ID|DESCRP|
-|-|-|-|
-|3|46|Age 16 to 74|
-
-If you think about it, this makes sense. Of course we're going to need an `AGE filter`. If we're talking about people who are working, the person **HAS** to be over the age of 16. Since we've got 3 `ECOACT`s to chose from, let's just use `577`, so now we have and `IS_ID = 260`, nice. Let's perform another query to get the [INFUSE_TABLE_NAME](../fields/infuse_table_name.md) and [CELLNAME](../fields/cellname.md) fields.
-
-```sql
-SELECT IS_ID, CELLNAME, INFUSE_TABLE_NAME FROM infuse2011.cube_description WHERE IS_ID = 260;
-```
-
-You'll notice that we get 3 rows. This makes sense as there are 3 filters. If you don't fully understand this, that's fine. You will.
-
-|IS_ID|CELLNAME|INFUSE_TABLE_NAME|
-|-|-|-|
-|260|QS601EW0004|QS601_0_EW_MRG_RCD_AGG|
-|260|QS601EW0004|QS601_0_EW_MRG_RCD_AGG|
-|260|QS601EW0004|QS601_0_EW_MRG_RCD_AGG|
-
-Now that we know 
+This will return 1315 rows.

@@ -1,13 +1,11 @@
 # tables/cellmaps
 
-The [cellmaps](cellmaps.md) is a very intutitive table. It consists of an [IS_ID](../fields/is_id.md) field, a [CELLNAME](../fields/cellname.md) field and a list of all the `filters`, i.e 
-
+The [cellmaps](cellmaps.md) is a very intutitive table. It consists of an [IS_ID](../fields/is_id.md) field, a [CELLNAME](../fields/cellname.md) field and a list of all the `filters`, i.e
 
 - `ABDPEWE`
 - `ABWELCH`
 - `ACCTYP`
 - `...`
-
 
 Given that you know the `topics` and `filters` you want the data for you can find the releveant [CELLNAME](../fields/cellname.md) and thus the relevant [INFUSE_TABLE_NAME](../fields/infuse_table_name.md).
 
