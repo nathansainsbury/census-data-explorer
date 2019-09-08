@@ -8,6 +8,7 @@ The [cellmaps](cellmaps.md) is a very intutitive table. It consists of an [IS_ID
 - `ACCTYP`
 - `...`
 
+
 Given that you know the `topics` and `filters` you want the data for you can find the releveant [CELLNAME](../fields/cellname.md) and thus the relevant [INFUSE_TABLE_NAME](../fields/infuse_table_name.md).
 
 Let's say you have:
@@ -33,12 +34,34 @@ Which will return a table with 173 columns and 12 rows.
 
 You will notice that this table has a field called `TENURE` which is `NULL` for the first result. This basically means that the given combination exists, but it also exists with extra topics. An example of this is that you can calculate how many people are in full-time work (`ECOACT`) and you can also calculate the religion (`RELIG`) of the people in full-time work.
 
-This table does not tell you the `GEOLOCATION` of where the data is available. For this you can use the [IS_ID](../fields/is_id.md) found in this table to query the [codelist_cube_description](codelist_cube_description.md) table:
+This table does also includes the geolocation information represented by the following columns:
+
+- GL_2000
+- GL_2001
+- GL_2002
+- GL_2003
+- GL_2004
+- GL_2005
+- GL_2006
+- GL_2007
+- GL_2008
+- GL_2009
+- GL_2010
+- GL_2011
+- GL_2012
+- GL_2013
+
+The columns contain a comma seperated list of extents, i.e:
+
+|GL_2003|
+|-|
+|3,4,5|
+
+With this information you can perform a query based on topics, filters and geolocations in one table.
 
 ```sql
-SELECT IS_ID, GL_EXTENTS FROM codelist_cube_description WHERE IS_ID = 1;
+SELECT * FROM cellmaps WHERE
+AGE = 46 AND
+ECOACT = 588 AND
+GL_2004 LIKE '%4%';
 ```
-
-|IS_ID|GL_EXTENTS|
-|-|-|
-|1|2002:3, 2003:4, 2003:5, 2003:6, 2003:7, 2004:4, 2005:4, 2006:4, 2006:5, 2006:6, 2006:7, 2007:4, 2007:5, 2007:6, 2007:7, 2008:4, 2008:6, 2008:7, 2009:4, 2009:5, 2009:6, 2009:7, 2010:4, 2010:5, 2010:6, 2010:7, 2011:4, 2012:4, 2012:7|
