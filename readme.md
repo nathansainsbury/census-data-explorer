@@ -92,7 +92,7 @@ The following section will describe the main meta data tables.
 
 ## Field Definitions
 
-In this section you will find information regarding individual `fields`.
+In this section you will find information regarding the most important individual `fields`.
 
 - [CLS](fields/cls.md)
 - [GL_EXTENTS](fields/gl_extents.md)
@@ -103,7 +103,7 @@ In this section you will find information regarding individual `fields`.
 - [INFUSE_TABLE_NAME](fields/infuse_table_name.md)
 - [CELLNAME](fields/cellname.md)
 - [IS_ID](fields/is_id.md)
-- [NESTED_DESCRP](fields/nested_descrp.md) (todo)
+- [NESTED_DESCRP](fields/nested_descrp.md)
 
 ## Example Questions
 

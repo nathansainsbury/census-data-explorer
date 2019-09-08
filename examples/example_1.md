@@ -69,35 +69,41 @@ In reality, you would have to go through them all and decide for yourself. Howev
 Now we need to find with `filter` we need. We can do this by performing the same query to the [codes](../tables/codes.md) tables as we did above:
 
 ```sql
-SELECT CLID, ID, DESCRP FROM codes WHERE CLID = 18;
+SELECT CLID, ID, DESCRP, NESTED_DESCRP FROM codes WHERE CLID = 18;
 ```
 
 You'll notice that if you've run this query yourself, there are 155 rows returned, and we're looking for something like `full-time employment`. However, this is very ambigious. Here's some of examples of `filters` that may appear to mean `full-time emplyoment`:
 
-|CLID|ID|DESCRP|
-|-|-|-|
-|18|565|Economically active|
-|18|566|Employed|
-|18|568|Full-time|
-|18|571|In employment|
-|18|577|Full-time|
-|18|588|In employment the week before the census"
-|18|591|Full-time|
-|18|594|Full-time|
-|18|2276|Full-time|
-|18|2277|Full-time (including full-time students)|
-|18|2285|Full-time|
-|18|2292|Full-time|
-|18|2293|(inclduing full-time students)|
-|18|3795|Full-time (excluding full-time students)|
-|18|3797|Full-time (excluding full-time students)|
-|18|3799|Full-time (excluding full-time students)|
-|...|...|...|
+|CLID|ID|DESCRP|NEST_DESCRP|
+|-|-|-|-|
+|18|565|Economically active|...|
+|18|566|Employed|...|
+|18|568|Full-time|...|
+|18|571|In employment|...|
+|18|577|Full-time|...|
+|18|588|In employment the week before the census"|...|
+|18|591|Full-time|...|
+|18|594|Full-time|...|
+|18|2276|Full-time|...|
+|18|2277|Full-time (including full-time students)|...|
+|18|2285|Full-time|...|
+|18|2292|Full-time|...|
+|18|2293|(inclduing full-time students)|...|
+|18|3795|Full-time (excluding full-time students)|...|
+|18|3797|Full-time (excluding full-time students)|...|
+|18|3799|Full-time (excluding full-time students)|...|
+|...|...|...|...|
 
 The point I'm trying to make here is that there are often (especially for `ECOACT`) many different `filters` that might make sense. The easiest way to describe why this appears to be the case is that certain [CLS](../filters/cls.md) don't go together. We'll see this shortly. 
 
-Since we're not sure exactly which one to go for, let's pick the first one from that list and search [cellmaps](../tables/cellmaps.md) table:
+We cannot solely rely on the DESCRP field, we also need to look at the [NESTED_DESCRP](nested_descrp.md) field. This shows us the granularity of the field and what full-time means for a given filter.
 
+As we were saying earlier, `full-time` can mean many different thing, but if we go with:
+
+
+
+----
+update later
 ```sql
 SELECT * FROM cellmaps WHERE UNIT = 1962 AND ECOACT = 568;
 ```
